@@ -51,19 +51,23 @@ def label_encoding(df):
 	encoded_data = pd.get_dummies(df.dropna()) # Should I drop the dropna?
 	return encoded_data.loc[:, (encoded_data.columns == 'class_<=50K')] # Find a cleaner way to do label encoding
 
+from sklearn.preprocessing import LabelEncoder
 # Given a training set X_train containing the input attribute values 
 # and labels y_train for the training instances,
 # build a decision tree and use it to predict labels for X_train. 
 # Return a pandas series with the predicted values. 
 def dt_predict(X_train,y_train):
 	decision_tree = tree.DecisionTreeClassifier()
+
+	label_encoder = LabelEncoder()
+	y_train = label_encoder.fit_transform(y_train)
 	decision_tree.fit(X_train, y_train)
-	return pd.Series(decision_tree.predict(X_train)) # Check if there is a cleaner implementation for this
+	y_pred = decision_tree.predict(X_train)
+	return pd.Series(label_encoder.inverse_transform(y_pred)) # Check if there is a cleaner implementation for this
 
 # Given a pandas series y_pred with the predicted labels and a pandas series y_true with the true labels,
 # compute the error rate of the classifier that produced y_pred.  
 def dt_error_rate(y_pred, y_true):
-	score = 0
-	for output in zip(y_pred, y_true):
-		score = (score + 1) if output[0] == output[1] else score
-	return score / len(y_true) # Ensure that this works and ensure that this is exactly what he means by error rate
+    all_positive = sum(y_pred == y_true)
+    instance_number = len(y_true)
+    return 1 - all_positive / instance_number
