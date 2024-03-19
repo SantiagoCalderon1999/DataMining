@@ -26,7 +26,7 @@ def read_csv_1(data_file):
     Returns:
             DataFrame: Dataframe read from the provided location
     """
-    return pd.read_csv(data_file)
+    return pd.read_csv(data_file, usecols=lambda x: x != "fnlwgt")
 
 
 # Return the number of rows in the pandas dataframe df.
@@ -150,7 +150,8 @@ def one_hot_encoding(df):
             excluding the target attribute
     """
     df = data_frame_without_missing_values(df)
-    encoded_data = pd.get_dummies(df)
+    columns = [x for x in df.columns if x != "education-num"]
+    encoded_data = pd.get_dummies(df, columns=columns)
     class_less_50_name = "class_<=50K"
     class_greater_50_name = "class_>50K"
     return encoded_data.loc[
