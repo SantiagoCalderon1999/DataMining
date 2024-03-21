@@ -140,14 +140,14 @@ def data_frame_without_missing_values(df):
 # The function's output should not contain the target attribute.
 def one_hot_encoding(df):
     """
-            Performs one-hot encoding on an input dataframe
+    Performs one-hot encoding on an input dataframe
 
     Args:
-            df (Dataframe): Dataframe to perform one-hot encoding
+        df (Dataframe): Dataframe to perform one-hot encoding
 
     Returns:
-            Dataframe: Dataframe with columns after one-hot encoding,
-            excluding the target attribute
+        Dataframe: Dataframe with columns after one-hot encoding,
+        excluding the target attribute
     """
     df = data_frame_without_missing_values(df)
     columns = [x for x in df.columns if x != "education-num"]
@@ -166,14 +166,14 @@ def one_hot_encoding(df):
 # converted to numeric using label encoding.
 def label_encoding(df):
     """
-            Performs label encoding on the target column of the provided dataframe
+    Performs label encoding on the target column of the provided dataframe
 
     Args:
-            df (Dataframe): Dataframe to perform label encoding
+        df (Dataframe): Dataframe to perform label encoding
 
     Returns:
-            Dataframe: Dataframe containing the target variables as numeric values,
-            converted via label encoding
+        Dataframe: Dataframe containing the target variables as numeric values,
+        converted via label encoding
     """
     df = data_frame_without_missing_values(df)
     label_encoder = LabelEncoder()
@@ -181,7 +181,7 @@ def label_encoding(df):
     y = label_encoder.fit_transform(df[output_column_name])
     df_encoded = df.copy()
     df_encoded[output_column_name] = y
-    return df_encoded[output_column_name]
+    return pd.Series(df_encoded[output_column_name].reset_index()[output_column_name])
 
 
 # Given a training set X_train containing the input attribute values
@@ -190,15 +190,15 @@ def label_encoding(df):
 # Return a pandas series with the predicted values.
 def dt_predict(X_train, y_train):
     """
-            Builds a decision tree and returns Series object with predictions of the
-            training dataset
+    Builds a decision tree and returns Series object with predictions of the
+    training dataset
 
     Args:
-            X_train: Features of the training set
-            y_train (_type_): Labels of the training instances
+        X_train: Features of the training set
+        y_train (_type_): Labels of the training instances
 
     Returns:
-            Series: Labels predicted for the given dataset
+        Series: Labels predicted for the given dataset
     """
     decision_tree = tree.DecisionTreeClassifier()
     label_encoder = LabelEncoder()
@@ -214,8 +214,8 @@ def dt_predict(X_train, y_train):
 # the error rate of the classifier that produced y_pred.
 def dt_error_rate(y_pred, y_true):
     """
-        Gets the error rate of two different pandas series, corresponding to
-        the predicted values and the true labels
+    Gets the error rate of two different pandas series, corresponding to
+    the predicted values and the true labels
 
     Args:
         y_pred (Series): Predicted labels
