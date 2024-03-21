@@ -4,6 +4,9 @@
     about wholesale costumers
 """
 
+import os
+
+os.environ["OMP_NUM_THREADS"] = "2"
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -102,7 +105,7 @@ def kmeans(df, k):
     Returns:
         Series: Series containing the labels produced by the clustering of the given DataFrame.
     """
-    kmeans_model = cluster.KMeans(n_clusters=k, init="random")
+    kmeans_model = cluster.KMeans(n_clusters=k, init="random", n_init=1)
     kmeans_model.fit(df)
     return pd.Series(kmeans_model.labels_)
 
@@ -122,7 +125,7 @@ def kmeans_plus(df, k):
     Returns:
         Series: Series containing the labels produced by the clustering of the given DataFrame.
     """
-    kmeans_plus_model = cluster.KMeans(n_clusters=k, init="k-means++")
+    kmeans_plus_model = cluster.KMeans(n_clusters=k, init="k-means++", n_init=1)
     kmeans_plus_model.fit(df)
     return pd.Series(kmeans_plus_model.labels_)
 
@@ -142,7 +145,7 @@ def agglomerative(df, k):
         Series: Series containing the labels produced by the clustering of the given DataFrame.
     """
     agg = cluster.AgglomerativeClustering(
-        n_clusters=k, linkage="single", affinity="euclidean"
+        n_clusters=k, linkage="single", metric="euclidean"
     )
     agg.fit(df)
     return pd.Series(agg.labels_)
@@ -256,7 +259,7 @@ def scatter_plots(df):
     """
 
     k_clusters = 3
-    kmeans_model = cluster.KMeans(n_clusters=k_clusters)
+    kmeans_model = cluster.KMeans(n_clusters=k_clusters, init="random", n_init=1)
 
     df = standardize(df)
     kmeans_model.fit(df)
