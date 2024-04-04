@@ -1,16 +1,46 @@
 # Data Mining Techniques ![Python](https://img.shields.io/badge/python->=3.8-blue.svg)
 
-Welcome to the Data Mining Techniques repository! Here, you'll find a diverse collection of notebooks showcasing various data mining techniques implemented in Python.
+Welcome to the Data Mining Techniques repository! Here, you'll find a diverse collection of notebooks showcasing various data mining techniques implemented in Python. The repository covers fundamental concepts like linear models, nominal data classification, clustering, statistical modeling, and text mining.
 
-## Getting Started
+The notebooks in this repository provide a hands-on introduction to data mining techniques, along with practical examples to help you understand how these techniques work. Whether you're new to data mining or looking to expand your knowledge, you'll find something of interest here.
 
-1. Ensure you have Python 3.8 or higher installed on your local machine.
-2. Install the required dependencies.
+Let's dive in and explore the world of data mining techniques together!
+
+## Topics
+
+1. [Linear Models](#linear-models)
+    - [Linear Classification](#linear-classification)
+    - [Linear Regression](#linear-regression)
+2. [Nominal Data Classification](#nominal-data-classification)
+    - [OneR (1R) Algorithm](#oner-1r-algorithm)
+    - [Logistic Regression](#logistic-regression)
+    - [Decision Tree Classification](#decision-tree-classification)
+    - [K-Nearest Neighbors (KNN)](#k-nearest-neighbors-knn)
+3. [Clustering](#clustering)
+    - [Agglomerative Clustering](#agglomerative-clustering)
+    - [DBSCAN](#dbscan)
+    - [K-means Clustering](#k-means-clustering)
+4. [Statistical Modeling](#statistical-modeling)
+    - [Gaussian Mixture](#gaussian-mixture)
+    - [Instance-Based Learning](#instance-based-learning)
+5. [Text Mining](#text-mining)
+    - [Text Classification](#text-classification)
+    - [Text Clusterization](#text-clusterization)
+
+## Installation
+
+1. Clone the repository.
+    ```shell
+    git clone  git@github.com:SantiagoCalderon1999/DataMining.git
+    cd DataMining
+    ```
+2. Ensure you have Python 3.8 or higher installed on your local machine.
+3. Install the required dependencies.
     ```shell
     pip install -r requirements.txt
     ```
 
-3. Dive into the notebooks at your leisure!
+4. Dive into the notebooks at your liking!
 
 ## Linear Models
 
