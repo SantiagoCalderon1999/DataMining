@@ -1,69 +1,78 @@
 # Data Mining Techniques ![Python](https://img.shields.io/badge/python->=3.8-blue.svg)
 
-Welcome to the Data Mining Techniques repository! Here, you'll find a collection of notebooks showcasing various data mining techniques implemented in Python.
+Welcome to the Data Mining Techniques repository! Here, you'll find a diverse collection of notebooks showcasing various data mining techniques implemented in Python.
 
 ## Getting Started
 
-1. Make sure you have Python 3.8 or higher installed on your local machine.
+1. Ensure you have Python 3.8 or higher installed on your local machine.
 2. Install the required dependencies.
+    ```shell
+    pip install -r requirements.txt
+    ```
 
-```shell
-pip install -r requirements.txt
-```
-
-3. Explore the notebooks at your liking!
+3. Dive into the notebooks at your leisure!
 
 ## Linear Models
 
-These type of models are suitable for either performing regression tasks on datasets that can be modeled as a straight line or classification on linearly separable datasets.
+Linear models are versatile tools suitable for regression tasks on linear datasets or classification on linearly separable datasets.
 
 ### Linear Classification
-In this notebook, we delve into linear classification techniques. We generate two clusters of data randomly, each drawn over a straight line. Then, we separate these clusters using the Perceptron algorithm.
 
-[notebook](linear_models/linear_classification.ipynb)
+Explore linear classification techniques. We generate two clusters of data randomly, each drawn over a straight line, and separate them using the Perceptron algorithm.
+
+[Explore Linear Classification](linear_models/linear_classification.ipynb)
 
 ### Linear Regression
-Explore linear regression using Gradient Descent! We start by manually implementing Gradient Descent on the London borough profiles dataset to predict the maximum.
+
+Delve into linear regression using Gradient Descent. We implement Gradient Descent on the London borough profiles dataset to predict the maximum.
 
 ![Linear Regression](images/LinearRegression.png)
 
-[notebook](linear_models/linear_regression.ipynb)
+[Explore Linear Regression](linear_models/linear_regression.ipynb)
 
 ## Nominal Data Classification
 
-This section delves into various algorithms tailored for classifying nominal data, providing insights into their applications and effectiveness.
+Discover algorithms tailored for classifying nominal data, offering insights into their applications and effectiveness.
 
 ### OneR (1R) Algorithm
 
-This algorithm generates rules for all pairs of `sepalLength` and `sepalWidth` values within the iris dataset, offering a straightforward approach to nominal data classification.
+Generate rules for pairs of `sepalLength` and `sepalWidth` values within the iris dataset, providing a straightforward approach to nominal data classification.
 
-[notebook](classification_nominal_data/one_r_algorithm.ipynb.ipynb)
+[Explore OneR Algorithm](classification_nominal_data/one_r_algorithm.ipynb)
 
 ### Logistic Regression
 
-This classifier models the probability of categorical outcomes, making it suitable for nominal data analysis, such as the implemented for the iris dataset.
+Model the probability of categorical outcomes, suitable for nominal data analysis, as implemented for the iris dataset.
 
-[notebook](classification_nominal_data/logistic_regression_classifier.ipynb)
+[Explore Logistic Regression](classification_nominal_data/logistic_regression_classifier.ipynb)
 
 ### Decision Tree Classification
 
-This section presents decision tree classifiers for both the iris and adult datasets, showcasing their versatility in nominal data classification. Decision trees provide intuitive visualizations of decision-making processes and can handle complex interactions between features.
-[notebook](classification_nominal_data/decision_tree_classifier_adult_dataset.ipynb)
-[notebook](classification_nominal_data/decision_tree_classifier_iris_dataset.ipynb)
+Present decision tree classifiers for both the iris and adult datasets, showcasing their versatility in nominal data classification.
+
+[Explore Decision Tree Classification](classification_nominal_data/decision_tree_classifier_adult_dataset.ipynb)
+
+### K-Nearest Neighbors (KNN)
+
+Classify data points based on the most common class among their K nearest neighbors, demonstrated for the iris dataset with performance evaluation using various metrics.
+
+[Explore KNN](classification_nominal_data/decision_tree_classifier_iris_dataset.ipynb)
 
 ## Clustering
 
+Discover various clustering techniques and analyze their metrics.
+
 ### Agglomerative Clustering
 
-Agglomerative clustering is a hierarchical clustering technique where each data point starts as its own cluster and then merges with other clusters based on some similarity metric. In the notebook you will view the implementation of this algorithm and the analysis of its metrics.
+Agglomerative clustering is a hierarchical clustering technique where each data point starts as its own cluster and then merges with other clusters based on some similarity metric. In the notebook, you will find the implementation of this algorithm and the analysis of its metrics.
 
-[notebook](clustering/agglomerative-clustering.ipynb)
+[Explore Agglomerative Clustering](clustering/agglomerative-clustering.ipynb)
 
 ### DBSCAN
 
-DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm that groups together points that are closely packed, marking points as outliers if they lie alone in low-density regions. In the notebook you will view the implementation of this algorithm and the analysis of its metrics.
+DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm that groups together points that are closely packed, marking points as outliers if they lie alone in low-density regions. In the notebook, you will find the implementation of this algorithm and the analysis of its metrics.
 
-[notebook](clustering/dbscan-clustering.ipynb)
+[Explore DBSCAN](clustering/dbscan-clustering.ipynb)
 
 ### K-means Clustering
 
@@ -71,8 +80,7 @@ K-means clustering is a popular partitioning clustering algorithm. It randomly i
 
 In this notebook, you can explore an implementation of the k-means clustering algorithm from scratch. Additionally, you can compare its results with the k-means clustering algorithm implemented in scikit-learn. Evaluation metrics such as Calinski-Harabaz index, Silhouette score, and Within Cluster Similarity are computed for comparison.
 
-[notebook](clustering/k-means-clustering.ipynb)
-
+[Explore K-means Clustering](clustering/k-means-clustering.ipynb)
 
 ## Statistical Modeling
 
@@ -80,11 +88,24 @@ In this notebook, you can explore an implementation of the k-means clustering al
 
 Gaussian Mixture Models (GMM) are probabilistic models that assume all the data points are generated from a mixture of several Gaussian distributions with unknown parameters. They are often used for clustering and density estimation tasks.
 
-[notebook](statistica_modelling/gaussian-mixture.ipynb)
+[Explore Gaussian Mixture](statistica_modelling/gaussian-mixture.ipynb)
 
 ### Instance-Based Learning
 
 Instance-Based Learning (IBL), also known as lazy learning, is a type of machine learning where the system learns by memorizing the instances from the training data. It makes predictions based on the similarity of new instances to the stored instances.
 
-[notebook](statistical_modelling/instance-based-learning.ipynb)
+[Explore Instance-Based Learning](statistical_modelling/instance-based-learning.ipynb)
 
+## Text Mining
+
+### Text Classification
+
+A Multinomial Naïve Bayes classifier is used to predict whether an email is spam or not.
+
+[Explore Text Classification](text_mining/text_classification.ipynb)
+
+### Text Clusterization
+
+Texts are clustered based on Euclidean distance and cosine similarity of their frequency term document matrix.
+
+[Explore Text Clusterization](text_mining/text_clusterization.ipynb)
