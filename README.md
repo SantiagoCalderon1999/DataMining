@@ -21,6 +21,6 @@ In this notebook, we delve into linear classification techniques. We generate tw
 ### Linear Regression
 Explore linear regression using Gradient Descent! We start by manually implementing Gradient Descent on the London borough profiles dataset to predict the maximum.
 
-![Linear Regression](blob/LinearRegression.png)
+![Linear Regression](images/LinearRegression.png)
 
 Feel free to explore and experiment with the provided notebooks! Happy mining!
