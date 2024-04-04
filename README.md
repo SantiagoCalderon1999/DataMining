@@ -72,3 +72,19 @@ K-means clustering is a popular partitioning clustering algorithm. It randomly i
 In this notebook, you can explore an implementation of the k-means clustering algorithm from scratch. Additionally, you can compare its results with the k-means clustering algorithm implemented in scikit-learn. Evaluation metrics such as Calinski-Harabaz index, Silhouette score, and Within Cluster Similarity are computed for comparison.
 
 [notebook](clustering/k-means-clustering.ipynb)
+
+
+## Statistical Modeling
+
+### Gaussian Mixture
+
+Gaussian Mixture Models (GMM) are probabilistic models that assume all the data points are generated from a mixture of several Gaussian distributions with unknown parameters. They are often used for clustering and density estimation tasks.
+
+[notebook](statistica_modelling/gaussian-mixture.ipynb)
+
+### Instance-Based Learning
+
+Instance-Based Learning (IBL), also known as lazy learning, is a type of machine learning where the system learns by memorizing the instances from the training data. It makes predictions based on the similarity of new instances to the stored instances.
+
+[notebook](statistical_modelling/instance-based-learning.ipynb)
+
