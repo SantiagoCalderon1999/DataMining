@@ -134,8 +134,8 @@ A Multinomial Naïve Bayes classifier is used to predict whether an email is spa
 
 [Explore Text Classification](text_mining/text_classification.ipynb)
 
-### Text Clusterization
+### Text Clustering
 
 Texts are clustered based on Euclidean distance and cosine similarity of their frequency term document matrix.
 
-[Explore Text Clusterization](text_mining/text_clusterization.ipynb)
+[Explore Text Clustering](text_mining/text_clusterization.ipynb)
